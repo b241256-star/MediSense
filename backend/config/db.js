@@ -23,3 +23,4 @@ function getDB() {
 
 module.exports = { initDB, getDB };
 console.log("DATABASE_URL:", process.env.DATABASE_URL);
+// test change
