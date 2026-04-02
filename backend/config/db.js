@@ -4,11 +4,12 @@ let pool;
 
 async function initDB() {
   try {
+    // 👇 DIRECT URL use karo (no object, no host split)
     pool = mysql.createPool(process.env.DATABASE_URL);
 
-    const connection = await pool.getConnection();
+    const conn = await pool.getConnection();
     console.log('✅ MySQL connected successfully');
-    connection.release();
+    conn.release();
 
   } catch (err) {
     console.error('❌ Database connection failed:', err.message);
