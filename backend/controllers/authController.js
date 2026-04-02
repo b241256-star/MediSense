@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt    = require('jsonwebtoken');
-const { pool } = require('../config/db');
+const { getDB } = require('../config/db');
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET || 'medisense_secret_key', { expiresIn: '30d' });
@@ -20,19 +20,19 @@ const registerUser = async (req, res) => {
     const cleanEmail = email.trim().toLowerCase();
     const cleanName  = name.trim();
 
-    const [existingUsers] = await pool.query('SELECT id FROM users WHERE email = ?', [cleanEmail]);
+    const [existingUsers] = await db.query('SELECT id FROM users WHERE email = ?', [cleanEmail]);
     if (existingUsers.length > 0) return res.status(400).json({ message: 'An account with this email already exists.' });
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const [result] = await pool.query(
+    const [result] = await db.query(
       'INSERT INTO users (name, email, password, age, gender) VALUES (?, ?, ?, ?, ?)',
       [cleanName, cleanEmail, hashedPassword, age || null, gender || null]
     );
 
     console.log('✅ User registered with ID:', result.insertId);
 
-    await pool.query('INSERT IGNORE INTO user_profiles (user_id) VALUES (?)', [result.insertId]);
+    await db.query('INSERT IGNORE INTO user_profiles (user_id) VALUES (?)', [result.insertId]);
 
     res.status(201).json({
       id:     result.insertId,
@@ -57,7 +57,7 @@ const loginUser = async (req, res) => {
     if (!email || !password) return res.status(400).json({ message: 'Please enter email and password.' });
 
     const cleanEmail = email.trim().toLowerCase();
-    const [users] = await pool.query('SELECT * FROM users WHERE email = ?', [cleanEmail]);
+    const [users] = await db.query('SELECT * FROM users WHERE email = ?', [cleanEmail]);
     const user = users[0];
 
     if (user && (await bcrypt.compare(password, user.password))) {
