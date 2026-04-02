@@ -2,8 +2,8 @@
 //  APP.JS — MediSense AI Core App Logic
 // ============================================================
 
-const API_BASE = 'http://localhost:5000/api';
-
+const BASE_URL = "https://medisense-zibc.onrender.com";
+const API_BASE = `${BASE_URL}/api`;
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-link[data-page]').forEach(a => a.classList.remove('active'));

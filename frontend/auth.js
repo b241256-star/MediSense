@@ -3,9 +3,8 @@
 //  Handles: login, registration, session, password toggle
 // ============================================================
 
-const API_URL = 'http://localhost:5000/api';
-
-/** Get the currently logged-in user session */
+const BASE_URL = "https://medisense-zibc.onrender.com";
+const API_URL = `${BASE_URL}/api`;/** Get the currently logged-in user session */
 function getSession() {
   try {
     return JSON.parse(localStorage.getItem('medisense_session') || 'null');

@@ -2,8 +2,8 @@
 //  CHAT.JS — MediSense AI Chat Module
 // ============================================================
 
-const API_CHAT_URL = 'http://localhost:5000/api/chat';
-
+const BASE_URL = "https://medisense-zibc.onrender.com";
+const API_CHAT_URL = `${BASE_URL}/api/chat`;
 function getAuthToken() {
   const session = JSON.parse(localStorage.getItem('medisense_session') || '{}');
   return session.token || null;
@@ -18,9 +18,7 @@ async function loadChatHistory() {
   const token = getAuthToken();
   if (!token) return;
   try {
-    const res = await fetch(`${API_CHAT_URL}/history`, {
-      headers: { 'Authorization': `Bearer ${token}` }
-    });
+    const res = await fetch("https://medisense-zibc.onrender.com/api/chat");
     if (!res.ok) throw new Error('Failed');
     const history = await res.json();
     const messageArea = document.getElementById('chatMessages');
