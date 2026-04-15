@@ -1,56 +1,56 @@
 # 🩺 MediSense — Virtual Health Assistant
 
-MediSense ek AI-powered health assistant hai jo tumhare symptoms sunke instant diagnosis, precautions aur nearby hospitals dhundhne mein help karta hai — bilkul free!
+MediSense is a free AI-powered health assistant. Just describe your symptoms in plain English or Hinglish and get instant diagnosis guidance, precautions, and nearby hospital suggestions.
 
-🌐 **Live Demo:** [MediSense App](https://b241256-star.github.io/MediSense-Virtual-Health-Assistant/)
-
----
-
-## 🤔 Ye kya karta hai?
-
-Bas apne symptoms type karo — **English ya Hinglish** mein — aur MediSense:
-
-- 🔍 Possible disease batata hai (200+ diseases ka database)
-- 💊 Precautions aur home remedies suggest karta hai
-- 🏥 Nearest hospitals dhundhta hai
-- 🚨 Emergency numbers ek click mein deta hai
+🌐 **Live Demo:** [Try MediSense](https://b241256-star.github.io/MediSense-Virtual-Health-Assistant/)
 
 ---
 
-## ✨ Main Features
+## 💡 What does it do?
+
+Type your symptoms and MediSense will:
+
+- 🔍 Suggest possible diseases (200+ disease database)
+- 💊 Give precautions and home remedies
+- 🏥 Find nearest hospitals based on your location
+- 🚨 Provide emergency helpline numbers instantly
+
+---
+
+## ✨ Features
 
 | Feature | Description |
 |--------|-------------|
-| 🤖 AI Diagnosis | Claude AI se symptoms analyze karo |
-| 🏥 Hospital Finder | Location se nearest hospitals dekho |
-| 📚 Symptoms Guide | 130+ symptoms ka encyclopedia |
-| 🚨 Emergency Help | 108, 112 jaise helplines turant access karo |
-| 🇮🇳 Hinglish Support | "mujhe bukhaar hai" bhi samajhta hai |
+| 🤖 AI Diagnosis | Analyzes symptoms using Claude AI |
+| 🏥 Hospital Finder | Finds nearest hospitals using your location |
+| 📚 Symptoms Guide | Browse 130+ symptoms with severity ratings |
+| 🚨 Emergency Help | One-click access to 108, 112 and other helplines |
+| 🇮🇳 Hinglish Support | Works with "mujhe bukhaar hai" too! |
 
 ---
 
-## 🛠️ Tech Used
+## 🛠️ Tech Stack
 
 - **HTML, CSS, JavaScript** — Frontend
-- **Claude AI (Anthropic)** — Symptom analysis
+- **Claude AI (Anthropic)** — Symptom analysis engine
 - **Google Maps API** — Hospital finder
-- **GitHub Pages** — Free hosting
+- **GitHub Pages** — Hosting
 
 ---
 
-## 🚀 Local mein kaise chalayein?
+## 🚀 Run Locally
 
 ```bash
-# Step 1: Clone karo
+# Clone the repo
 git clone https://github.com/b241256-star/MediSense.git
 
-# Step 2: Folder mein jao
+# Go into the folder
 cd MediSense
 
-# Step 3: index.html browser mein open karo
+# Open index.html in your browser
 ```
 
-> 💡 Koi installation ki zaroorat nahi! Seedha `index.html` open karo.
+> No installations needed. Just open `index.html` directly!
 
 ---
 
@@ -58,21 +58,21 @@ cd MediSense
 
 ```
 MediSense/
-├── index.html        # Home page
-├── style.css         # Styling
-├── script.js         # Main logic + Claude API
+├── index.html            # Home page
+├── style.css             # Styling
+├── script.js             # App logic + Claude API calls
 ├── pages/
-│   ├── diagnosis.html    # AI chat
+│   ├── diagnosis.html    # AI chat interface
 │   ├── hospitals.html    # Hospital finder
-│   ├── symptoms.html     # Symptoms list
-│   └── emergency.html    # Emergency info
+│   ├── symptoms.html     # Symptoms encyclopedia
+│   └── emergency.html    # Emergency info & first aid
 └── data/
     └── diseases.json     # Disease database
 ```
 
 ---
 
-## 🚑 Emergency Numbers
+## 🚑 Emergency Numbers (India)
 
 | Service | Number |
 |---------|--------|
@@ -85,19 +85,19 @@ MediSense/
 
 ## ⚠️ Disclaimer
 
-MediSense sirf **educational purpose** ke liye hai.
-Yeh kisi doctor ka replacement **nahi** hai.
-Emergency mein **108 ya 112** call karein.
+MediSense is for **educational purposes only**.
+It is **not a replacement** for a real doctor.
+In any emergency, call **108 or 112** immediately.
 
 ---
 
-## 🤝 Contribute karna chahte ho?
+## 🤝 Want to Contribute?
 
-1. Repo fork karo
-2. Changes karo
-3. Pull Request bhejo
+1. Fork this repo
+2. Make your changes
+3. Submit a Pull Request
 
-Har contribution welcome hai! 🙌
+All contributions are welcome! 🙌
 
 ---
 
